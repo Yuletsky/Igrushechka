@@ -1,0 +1,256 @@
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe, файл: C:\Program Files (x86)\Новая папка\TX\TXLib.h, строка: 11801, функция: HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005052F4 (32-bit), Flags: Cmdre0, Thread: 0x64C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041C8AA in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: txSetFillColor() at C:/Program Files (x86)/Новая папка/TX/TXLib.h (11801)
+
+# 1 0x0042B62D in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: DrawPodlozhka() at C:/Users/Admin/Documents/Inf/Igrushechka/Igrushechka.cpp (15):
+
+     13: void DrawPodlozhka (double x, double y, double BaseColor)
+     14: {
+=>   15:     txSetFillColor (BaseColor);
+     16: 
+     17:     txCreateWindow (x, y);
+
+# 2 0x0042B566 in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: main() at C:/Users/Admin/Documents/Inf/Igrushechka/Igrushechka.cpp (8):
+
+      6: int main()
+      7: {
+=>    8:     DrawPodlozhka (500, 500, TX_YELLOW);
+      9:     DrawSharik    (50, 50, 20, 1, 1, 1, TX_GREEN, TX_RED);
+     10: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC) at C:\Program Files (x86)\Новая папка\TX\TXLib.h (11801):
+
+  11799: HBRUSH txSetFillColor (COLORREF color, HDC dc /*= txDC()*/)
+  11800:     {
+=>11801: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return NULL;
+  11802: 
+  11803: $   HBRUSH brush = (color == TX_TRANSPARENT)? (HBRUSH) Win32::GetStockObject (HOLLOW_BRUSH) : Win32::CreateSolidBrush (color);
+
+# 1 in void DrawPodlozhka(double, double, double) at C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.cpp (15):
+
+     13: void DrawPodlozhka (double x, double y, double BaseColor)
+     14: {
+=>   15:     txSetFillColor (BaseColor);
+     16: 
+     17:     txCreateWindow (x, y);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Program Files (x86)\Новая папка\TX\TXLib.h
+Compiled:	Feb 27 2020 22:13:16, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 27 2020 22:13:23
+
+Run file:	C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe
+Directory:	C:\Users\Admin\Documents\Inf\Igrushechka
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe, файл: C:\Program Files (x86)\Новая папка\TX\TXLib.h, строка: 11801, функция: HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005052F4 (32-bit), Flags: Cmdre0, Thread: 0x248C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041C8AA in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: txSetFillColor() at C:/Program Files (x86)/Новая папка/TX/TXLib.h (11801)
+
+# 1 0x0042B5E5 in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: DrawPodlozhka() at C:/Users/Admin/Documents/Inf/Igrushechka/Igrushechka.cpp (15):
+
+     13: void DrawPodlozhka (double x, double y, double BaseColor)
+     14: {
+=>   15:     txSetFillColor (BaseColor);
+     16: 
+     17:     txCreateWindow (x, y);
+
+# 2 0x0042B566 in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: main() at C:/Users/Admin/Documents/Inf/Igrushechka/Igrushechka.cpp (8):
+
+      6: int main()
+      7: {
+=>    8:     DrawPodlozhka (500, 500, TX_YELLOW);
+      9:     //DrawSharik    (50, 50, 20, 1, 1, 1, TX_GREEN, TX_RED);
+     10: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC) at C:\Program Files (x86)\Новая папка\TX\TXLib.h (11801):
+
+  11799: HBRUSH txSetFillColor (COLORREF color, HDC dc /*= txDC()*/)
+  11800:     {
+=>11801: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return NULL;
+  11802: 
+  11803: $   HBRUSH brush = (color == TX_TRANSPARENT)? (HBRUSH) Win32::GetStockObject (HOLLOW_BRUSH) : Win32::CreateSolidBrush (color);
+
+# 1 in void DrawPodlozhka(double, double, double) at C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.cpp (15):
+
+     13: void DrawPodlozhka (double x, double y, double BaseColor)
+     14: {
+=>   15:     txSetFillColor (BaseColor);
+     16: 
+     17:     txCreateWindow (x, y);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Program Files (x86)\Новая папка\TX\TXLib.h
+Compiled:	Feb 27 2020 22:15:18, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 27 2020 22:15:25
+
+Run file:	C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe
+Directory:	C:\Users\Admin\Documents\Inf\Igrushechka
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe, файл: C:\Program Files (x86)\Новая папка\TX\TXLib.h, строка: 11801, функция: HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005052F4 (32-bit), Flags: Cmdre0, Thread: 0xDA0 (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041C8AA in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: txSetFillColor() at C:/Program Files (x86)/Новая папка/TX/TXLib.h (11801)
+
+# 1 0x0042B5BB in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: DrawPodlozhka() at C:/Users/Admin/Documents/Inf/Igrushechka/Igrushechka.cpp (15):
+
+     13: void DrawPodlozhka (double x, double y, COLORREF BaseColor)
+     14: {
+=>   15:     txSetFillColor (BaseColor);
+     16: 
+     17:     txCreateWindow (x, y);
+
+# 2 0x0042B564 in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: main() at C:/Users/Admin/Documents/Inf/Igrushechka/Igrushechka.cpp (8):
+
+      6: int main()
+      7: {
+=>    8:     DrawPodlozhka (500, 500, TX_YELLOW);
+      9:     //DrawSharik    (50, 50, 20, 1, 1, 1, TX_GREEN, TX_RED);
+     10: 
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC) at C:\Program Files (x86)\Новая папка\TX\TXLib.h (11801):
+
+  11799: HBRUSH txSetFillColor (COLORREF color, HDC dc /*= txDC()*/)
+  11800:     {
+=>11801: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return NULL;
+  11802: 
+  11803: $   HBRUSH brush = (color == TX_TRANSPARENT)? (HBRUSH) Win32::GetStockObject (HOLLOW_BRUSH) : Win32::CreateSolidBrush (color);
+
+# 1 in void DrawPodlozhka(double, double, COLORREF) at C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.cpp (15):
+
+     13: void DrawPodlozhka (double x, double y, COLORREF BaseColor)
+     14: {
+=>   15:     txSetFillColor (BaseColor);
+     16: 
+     17:     txCreateWindow (x, y);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Program Files (x86)\Новая папка\TX\TXLib.h
+Compiled:	Feb 27 2020 22:16:36, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 27 2020 22:16:44
+
+Run file:	C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe
+Directory:	C:\Users\Admin\Documents\Inf\Igrushechka
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe, файл: C:\Program Files (x86)\Новая папка\TX\TXLib.h, строка: 11801, функция: HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC),
+
+Сообщение: Окно рисования не создано или не в порядке.
+
+#1: TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400], Instance: 0x005052F4 (32-bit), Flags: Cmdre0, Thread: 0x124C (Main), GetLastError(): 13 (Недопустимые данные). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0041C8AA in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: txSetFillColor() at C:/Program Files (x86)/Новая папка/TX/TXLib.h (11801)
+
+# 1 0x0042B577 in C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe: main() at C:/Users/Admin/Documents/Inf/Igrushechka/Igrushechka.cpp (7):
+
+      5: int main()
+      6: {
+=>    7:     txSetFillColor (TX_YELLOW);
+      8: 
+      9:     txCreateWindow (500, 500);
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in HBRUSH__* {anonymous}::TX::txSetFillColor(COLORREF, HDC) at C:\Program Files (x86)\Новая папка\TX\TXLib.h (11801):
+
+  11799: HBRUSH txSetFillColor (COLORREF color, HDC dc /*= txDC()*/)
+  11800:     {
+=>11801: $1  if (_TX_DEFAULT_HDC_FAILED (dc)) return NULL;
+  11802: 
+  11803: $   HBRUSH brush = (color == TX_TRANSPARENT)? (HBRUSH) Win32::GetStockObject (HOLLOW_BRUSH) : Win32::CreateSolidBrush (color);
+
+# 1 in int main() at C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.cpp (7):
+
+      5: int main()
+      6: {
+=>    7:     txSetFillColor (TX_YELLOW);
+      8: 
+      9:     txCreateWindow (500, 500);
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 165, Date: 2020-02-23 20:43:39 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	C:\Program Files (x86)\Новая папка\TX\TXLib.h
+Compiled:	Feb 27 2020 22:18:43, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Feb 27 2020 22:18:50
+
+Run file:	C:\Users\Admin\Documents\Inf\Igrushechka\Igrushechka.exe
+Directory:	C:\Users\Admin\Documents\Inf\Igrushechka
+
+--------------------------------------------------
